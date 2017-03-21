@@ -29,7 +29,7 @@
             android:id="@+id/main_adFragment"
             class="com.jp.app.ethereum.orderbook.AdFragment"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true" />
 
         <FrameLayout

@@ -36,7 +36,7 @@ public class AdFragment extends Fragment {
                 AdRequest.DEVICE_ID_EMULATOR).build();
 
         // Start loading the ad in the background.
-      //  mAdView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);
 
     }
 
