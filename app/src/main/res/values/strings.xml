@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">이더리움 오더북</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6722966527757194/9915256669</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="powered">Powered by JP</string>
+    <string name="help">도움말 다시보기</string>
+
+
+    <string name="share">공유하기</string>
+    <string name="comment">리뷰남기기</string>
+    <string name="email">문의하기</string>
+    <string name="donation">기부하기</string>
+
+    <string name="direct">바로가기</string>
+    <string name="korbit">KORBIT</string>
+    <string name="coinone">COINONE</string>
+    <string name="bithumb">BITHUMB</string>
+    <string name="btc_orderbook">비트코인 오더북 (자매품)</string>
+    <string name="etc_orderbook">ETC 오더북 (자매품)</string>
+    <string name="orderbook_title_ask_qty">매도잔량</string>
+    <string name="orderbook_title_bid_qty">매수잔량</string>
+    <string name="orderbook_title_price">주문가격</string>
+    <string name="main_summary_buy">매수 최고가: %2$s (%1$s)</string>
+    <string name="main_summary_sell">매도 최저가: %2$s (%1$s)</string>
+    <string name="main_summary_avg_buy">매수가 평균: %1$s</string>
+    <string name="main_summary_avg_sell">매도가 평균: %1$s</string>
+</resources>
