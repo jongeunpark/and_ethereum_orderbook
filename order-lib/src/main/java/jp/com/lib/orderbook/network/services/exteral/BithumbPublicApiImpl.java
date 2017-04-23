@@ -23,7 +23,7 @@ import jp.com.lib.orderbook.network.services.Constants;
  */
 public class BithumbPublicApiImpl implements PublickApi {
     private static final String BASE_URL = "https://api.bithumb.com/public/";
-    private static final String ORDERBOOK_URL = "orderbook";
+    private static final String ORDERBOOK_URL = "orderbook/eth";
 
     private static final String INTERAL_ORDERBOOK_URL = "markets/bithumb";
     private static Context mContext;

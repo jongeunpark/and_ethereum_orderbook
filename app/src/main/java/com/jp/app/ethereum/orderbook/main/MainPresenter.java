@@ -37,7 +37,7 @@ public class MainPresenter implements MainContract.Presenter {
 
     private boolean isLoading = false;
 
-    private OrderbookFragment mCoinoneFragment, mKorbitFragment;
+    private OrderbookFragment mCoinoneFragment, mKorbitFragment, mBithumbFragment;
 
     public MainPresenter(@NonNull MainContract.View mainView) {
 
@@ -65,9 +65,9 @@ public class MainPresenter implements MainContract.Presenter {
     public OrderbookFragment[] generateFragments() {
         mKorbitFragment = OrderbookFragment.newInstance(OrderbookFragment.MARKET_TYPE_KORBIT);
         mCoinoneFragment = OrderbookFragment.newInstance(OrderbookFragment.MARKET_TYPE_COINONE);
-//        mBithumbFragment = OrderbookFragment.newInstance(OrderbookFragment.MARKET_TYPE_BITHUMB);
+        mBithumbFragment = OrderbookFragment.newInstance(OrderbookFragment.MARKET_TYPE_BITHUMB);
 
-        return new OrderbookFragment[]{mKorbitFragment, mCoinoneFragment};
+        return new OrderbookFragment[]{mKorbitFragment, mCoinoneFragment, mBithumbFragment};
     }
 
 
@@ -83,7 +83,7 @@ public class MainPresenter implements MainContract.Presenter {
                 isLoading = false;
             }
         }, 1000);
-//        mBithumbFragment.clearData();
+        mBithumbFragment.clearData();
         mCoinoneFragment.clearData();
         mKorbitFragment.clearData();
 
@@ -91,7 +91,7 @@ public class MainPresenter implements MainContract.Presenter {
 //        getInteralBithumbOrderbook(context);
 //        getInteralKorbitOrderbook(context);
         getCoinoneOrderbook(context);
-//        getBithumbOrderbook(context);
+        getBithumbOrderbook(context);
         getKorbitOrderbook(context);
     }
 
