@@ -13,11 +13,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.core.CrashlyticsCore;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.jp.app.ethereum.orderbook.BaseActivity;
+import com.jp.app.ethereum.orderbook.BuildConfig;
 import com.jp.app.ethereum.orderbook.R;
 import com.jp.app.ethereum.orderbook.help.HelpActivity;
 import com.jp.app.ethereum.orderbook.util.ActivityAnimator;
@@ -40,10 +43,10 @@ public class MainActivity extends BaseActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
+        Fabric.with(this, new Crashlytics.Builder().core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build()).build());
 
         setContentView(R.layout.main_act);
-
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -132,6 +135,8 @@ public class MainActivity extends BaseActivity
             openWeb( "https://www.korbit.co.kr/");
         } else if (id == R.id.main_nav_coinone) {
             openWeb( "https://coinone.co.kr/");
+        } else if (id == R.id.main_nav_bithumb) {
+            openWeb("https://www.bithumb.com/");
         } else if (id == R.id.main_nav_btc_orderbook){
             openBtcOrderbook();
         }else if (id == R.id.main_nav_etc_orderbook){

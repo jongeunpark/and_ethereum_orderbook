@@ -38,7 +38,10 @@
                 android:id="@+id/main_nav_coinone"
 
                 android:title="@string/coinone" />
+            <item
+                android:id="@+id/main_nav_bithumb"
 
+                android:title="@string/bithumb" />
 
 
         </menu>
