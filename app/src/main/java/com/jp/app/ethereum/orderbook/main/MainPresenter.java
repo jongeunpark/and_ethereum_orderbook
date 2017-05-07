@@ -210,7 +210,7 @@ public class MainPresenter implements MainContract.Presenter {
 
                 @Override
                 public void onFailure(int httpStatusCode, Throwable throwable) {
-
+                    mMainView.drawError(OrderbookFragment.MARKET_TYPE_COINONE, httpStatusCode);
                 }
             });
         } catch (Exception e) {
@@ -239,7 +239,7 @@ public class MainPresenter implements MainContract.Presenter {
 
                 @Override
                 public void onFailure(int httpStatusCode, Throwable throwable) {
-
+                    mMainView.drawError(OrderbookFragment.MARKET_TYPE_BITHUMB, httpStatusCode);
                 }
             });
 
@@ -271,7 +271,7 @@ public class MainPresenter implements MainContract.Presenter {
 
                 @Override
                 public void onFailure(int httpStatusCode, Throwable throwable) {
-
+                    mMainView.drawError(OrderbookFragment.MARKET_TYPE_KORBIT, httpStatusCode);
                 }
             });
 
