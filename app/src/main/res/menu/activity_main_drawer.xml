@@ -18,18 +18,9 @@
         android:id="@+id/main_nav_share"
         android:icon="@drawable/ic_share_black_48dp"
         android:title="@string/share" />
-
-
     <item android:title="@string/direct">
         <menu>
-            <item
-                android:id="@+id/main_nav_btc_orderbook"
 
-                android:title="@string/btc_orderbook" />
-            <item
-                android:id="@+id/main_nav_etc_orderbook"
-
-                android:title="@string/etc_orderbook" />
             <item
                 android:id="@+id/main_nav_korbit"
 
@@ -38,6 +29,7 @@
                 android:id="@+id/main_nav_coinone"
 
                 android:title="@string/coinone" />
+
             <item
                 android:id="@+id/main_nav_bithumb"
 
@@ -46,5 +38,29 @@
 
         </menu>
     </item>
+    <item android:title="@string/download">
+        <menu>
+
+            <item
+                android:id="@+id/main_nav_btc_orderbook"
+
+                android:title="@string/btc_orderbook" />
+            <item
+                android:id="@+id/main_nav_etc_orderbook"
+
+                android:title="@string/etc_orderbook" />
+
+            <item
+                android:id="@+id/main_nav_ltc_orderbook"
+
+                android:title="@string/ltc_orderbook" />
+
+            <item
+                android:id="@+id/main_nav_dash_orderbook"
+
+                android:title="@string/dash_orderbook" />
+        </menu>
+    </item>
+
 
 </menu>

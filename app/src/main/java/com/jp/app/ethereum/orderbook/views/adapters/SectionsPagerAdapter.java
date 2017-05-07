@@ -59,6 +59,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public void setOrderbooks(int marketType, Orderbooks orderbooks) {
         mPresenters.get(marketType).setOrderbook(orderbooks);
     }
-
+    public void setError(int marketType, int erroCode) {
+        mPresenters.get(marketType).setError(erroCode);
+    }
 
 }
