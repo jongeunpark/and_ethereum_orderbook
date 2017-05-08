@@ -18,8 +18,8 @@ android {
         applicationId "com.jp.app.ethereum.orderbook"
         minSdkVersion 14
         targetSdkVersion 24
-        versionCode 9
-        versionName "1.1.4"
+        versionCode 10
+        versionName "1.1.5"
     }
     buildTypes {
         release {

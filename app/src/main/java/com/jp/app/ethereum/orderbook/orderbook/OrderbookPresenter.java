@@ -92,7 +92,9 @@ public class OrderbookPresenter implements OrderbookContract.Presenter {
         if(orderItemList != null && orderItemList.size() > 0){
             mOrderbookView.drawList(orderItemList);
         }else{
-            mOrderbookView.drawError(mErrorCode);
+            if(mErrorCode != -1) {
+                mOrderbookView.drawError(mErrorCode);
+            }
         }
 
     }
