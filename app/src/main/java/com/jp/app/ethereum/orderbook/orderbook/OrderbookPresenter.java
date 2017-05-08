@@ -17,6 +17,7 @@ import jp.com.lib.orderbook.network.datas.Orderbooks;
 public class OrderbookPresenter implements OrderbookContract.Presenter {
     private static final int MAX = 5;
     private List<OrderItem> orderItemList;
+    private int mErrorCode = -1;
     private OrderbookContract.View mOrderbookView;
 
     public OrderbookPresenter(@NonNull OrderbookContract.View orderbookView) {
@@ -75,7 +76,10 @@ public class OrderbookPresenter implements OrderbookContract.Presenter {
 
     @Override
     public void setError(int erroCode) {
-        mOrderbookView.drawError(erroCode);
+        mErrorCode = erroCode;
+        if (mOrderbookView.isActive()) {
+            mOrderbookView.drawError(erroCode);
+        }
     }
 
     @Override
@@ -87,6 +91,8 @@ public class OrderbookPresenter implements OrderbookContract.Presenter {
     public void drawListAvailable() {
         if(orderItemList != null && orderItemList.size() > 0){
             mOrderbookView.drawList(orderItemList);
+        }else{
+            mOrderbookView.drawError(mErrorCode);
         }
 
     }
