@@ -18,8 +18,8 @@ android {
         applicationId "com.jp.app.ethereum.orderbook"
         minSdkVersion 14
         targetSdkVersion 24
-        versionCode 10
-        versionName "1.1.5"
+        versionCode 11
+        versionName "1.1.6"
     }
     buildTypes {
         release {
@@ -51,3 +51,4 @@ dependencies {
 
 
 }
+apply plugin: 'com.google.gms.google-services'
