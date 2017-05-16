@@ -11,6 +11,7 @@ import com.jp.app.ethereum.orderbook.orderbook.OrderbookPresenter;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.com.lib.orderbook.network.datas.LastPrice;
 import jp.com.lib.orderbook.network.datas.Orderbooks;
 
 /**
@@ -51,7 +52,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return MainActivity.COINONE;
             case OrderbookFragment.MARKET_TYPE_BITHUMB:
                 return MainActivity.BITHUMB;
-
+            case OrderbookFragment.MARKET_TYPE_ETC:
+                return MainActivity.ETC;
         }
         return null;
     }
@@ -62,5 +64,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public void setError(int marketType, int erroCode) {
         mPresenters.get(marketType).setError(erroCode);
     }
-
+    public void setPrice(int marketType, List<LastPrice> priceItemList) {
+        mPresenters.get(marketType).setPrice(priceItemList);
+    }
 }
