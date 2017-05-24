@@ -16,9 +16,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:padding="4dp"
+        android:padding="8dp"
         android:textSize="12dp"
-        android:textColor="@color/accent"
+        android:textColor="@color/primary_light"
         />
 
     <LinearLayout
@@ -46,12 +46,12 @@
                 android:textSize="14dp" />
 
             <TextView
+                android:layout_marginTop="4dp"
                 android:id="@+id/main_summary_avg_sell"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
 
-                android:alpha="0.8"
                 android:textColor="@color/primary_text"
                 android:textSize="13dp" />
 
@@ -68,11 +68,11 @@
 
 
             <TextView
+                android:layout_marginTop="4dp"
                 android:id="@+id/main_summary_avg_buy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:alpha="0.8"
                 android:textColor="@color/primary_text"
                 android:textSize="13dp" />
 
@@ -87,7 +87,7 @@
             app:siIndicatorColor="@color/accent"
 
             app:siSelectedTextColor="@android:color/white"
-            app:siTextColor="@android:color/white"
+            app:siTextColor="@color/divider"
             app:siTextSize="16dp" />
 
         <android.support.v4.view.ViewPager
