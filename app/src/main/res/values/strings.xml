@@ -46,5 +46,5 @@
     <string name="error_price">가격 정보를 불러오지 못했습니다</string>
     <string name="menu_refresh">오더북 새로고침</string>
     <string name="menu_chart">차트</string>
-    <string name="chart_info">Poloniex ETC/USDT</string>
+    <string name="chart_info">Poloniex ETH/USDT</string>
 </resources>
