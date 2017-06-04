@@ -230,8 +230,9 @@ public class MainFragment extends Fragment implements MainContract.View {
         @Override
         public void onTick(long millisUntilFinished) {
 
-
-            mTextRefresh.setText((millisUntilFinished / 1000) + " " + getString(R.string.refresh));
+            if(isActive()) {
+                mTextRefresh.setText((millisUntilFinished / 1000) + " " + getString(R.string.refresh));
+            }
 
         }
     }

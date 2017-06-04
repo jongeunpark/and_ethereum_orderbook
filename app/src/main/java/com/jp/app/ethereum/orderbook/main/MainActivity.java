@@ -30,6 +30,7 @@ import com.crashlytics.android.core.CrashlyticsCore;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.jp.app.ethereum.orderbook.BaseActivity;
 import com.jp.app.ethereum.orderbook.BuildConfig;
+import com.jp.app.ethereum.orderbook.DonationActivity;
 import com.jp.app.ethereum.orderbook.R;
 import com.jp.app.ethereum.orderbook.help.HelpActivity;
 import com.jp.app.ethereum.orderbook.util.ActivityAnimator;
@@ -158,7 +159,11 @@ public class MainActivity extends BaseActivity
                 mViewChart.setVisibility(View.GONE);
                 mFab.setVisibility(View.VISIBLE);
             } else {
-                super.onBackPressed();
+                try {
+                    super.onBackPressed();
+                }catch(Exception e){
+
+                }
             }
         }
     }
@@ -178,7 +183,9 @@ public class MainActivity extends BaseActivity
             case R.id.menu_main_refresh:
                 mainPresenter.getOrderbook(this);
                 return true;
-
+            case R.id.menu_main_donation:
+                startActivity(new Intent(MainActivity.this, DonationActivity.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
