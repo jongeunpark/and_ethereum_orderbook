@@ -204,13 +204,9 @@ public class MainActivity extends BaseActivity
             openShareApp();
         } else if (id == R.id.main_nav_send) {
             openEmailApp();
-        } else if (id == R.id.main_nav_korbit) {
-            openWeb("https://www.korbit.co.kr/");
-        } else if (id == R.id.main_nav_coinone) {
-            openWeb("https://coinone.co.kr/");
-        } else if (id == R.id.main_nav_bithumb) {
-            openWeb("https://www.bithumb.com/");
-        } else if (id == R.id.main_nav_btc_orderbook) {
+        } if (id == R.id.main_nav_bch_orderbook){
+            openApp("com.jp.app.bch.orderbook");
+        }else if (id == R.id.main_nav_btc_orderbook) {
             openApp("com.jp.app.bitcoin.orderbook");
         } else if (id == R.id.main_nav_ltc_orderbook) {
             openApp("com.jp.app.ltc.orderbook");
@@ -308,7 +304,7 @@ public class MainActivity extends BaseActivity
             body += "\nOS Version : " + android.os.Build.VERSION.RELEASE;
             body += "\nDevice : " + android.os.Build.MODEL;
             intent.putExtra(Intent.EXTRA_EMAIL,
-                    new String[]{"jp.jongeun.park@gmail.com.com"});
+                    new String[]{"jp.jongeun.park@gmail.com"});
             intent.putExtra(Intent.EXTRA_SUBJECT, "");
             intent.putExtra(Intent.EXTRA_TEXT, body);
             intent.setType("message/rfc822");

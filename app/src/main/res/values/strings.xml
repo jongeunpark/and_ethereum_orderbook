@@ -3,7 +3,7 @@
     <string name="banner_ad_unit_id">ca-app-pub-6722966527757194/5364813463</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="powered">Powered by Jeong<![CDATA[&]]>Park</string>
+    <string name="powered">Powered by MJ Hands</string>
     <string name="help">도움말 다시보기</string>
 
 
@@ -17,6 +17,7 @@
     <string name="coinone">COINONE</string>
     <string name="bithumb">BITHUMB</string>
     <string name="download">앱 바로가기</string>
+    <string name="bch_orderbook">BCH 오더북 </string>
     <string name="btc_orderbook">비트코인 오더북 </string>
     <string name="eth_orderbook">이더리움 오더북 </string>
     <string name="etc_orderbook">ETC 오더북</string>
