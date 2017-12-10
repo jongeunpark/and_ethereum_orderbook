@@ -50,10 +50,7 @@ public class MainActivity extends BaseActivity
 
     public static final int HELP_ACTIVITY_REQUESTCODE = 101;
     private MainPresenter mainPresenter;
-    private FloatingActionButton mFab;
-    private WebView mWebView;
-    private View mViewChart;
-    private View mViewChartTop;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,53 +95,7 @@ public class MainActivity extends BaseActivity
 
             title.setText(getString(getApplicationInfo().labelRes));
         }
-        mViewChart = findViewById(R.id.main_view_chart);
-        mViewChartTop = findViewById(R.id.chart_view_top);
-        mFab = (FloatingActionButton) findViewById(R.id.main_fab_chart);
-        mWebView = (WebView) findViewById(R.id.chart_web_chart);
-        WebSettings set = mWebView.getSettings();
 
-        set.setJavaScriptEnabled(true);
-
-        mWebView.setWebViewClient(new WebViewClient() {
-            @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
-
-
-                super.onPageStarted(view, url, favicon);
-            }
-
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-            }
-
-        });
-
-
-        mFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if (mViewChart.getVisibility() == View.GONE) {
-
-                    mViewChart.setVisibility(View.VISIBLE);
-                    mFab.setVisibility(View.GONE);
-                }
-            }
-        });
-        mViewChartTop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if (mViewChart.getVisibility() == View.VISIBLE) {
-
-                    mViewChart.setVisibility(View.GONE);
-                    mFab.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-        showWebView();
 
     }
 
@@ -155,16 +106,13 @@ public class MainActivity extends BaseActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            if (mViewChart.getVisibility() == View.VISIBLE) {
-                mViewChart.setVisibility(View.GONE);
-                mFab.setVisibility(View.VISIBLE);
-            } else {
-                try {
-                    super.onBackPressed();
-                }catch(Exception e){
 
-                }
+            try {
+                super.onBackPressed();
+            } catch (Exception e) {
+
             }
+
         }
     }
 
@@ -204,9 +152,15 @@ public class MainActivity extends BaseActivity
             openShareApp();
         } else if (id == R.id.main_nav_send) {
             openEmailApp();
-        } if (id == R.id.main_nav_bch_orderbook){
+        }else if (id == R.id.main_nav_korbit) {
+            openWeb("https://www.korbit.co.kr/");
+        } else if (id == R.id.main_nav_coinone) {
+            openWeb("https://coinone.co.kr/");
+        } else if (id == R.id.main_nav_bithumb) {
+            openWeb("https://www.bithumb.com/");
+        } else  if (id == R.id.main_nav_bch_orderbook) {
             openApp("com.jp.app.bch.orderbook");
-        }else if (id == R.id.main_nav_btc_orderbook) {
+        } else if (id == R.id.main_nav_btc_orderbook) {
             openApp("com.jp.app.bitcoin.orderbook");
         } else if (id == R.id.main_nav_ltc_orderbook) {
             openApp("com.jp.app.ltc.orderbook");
@@ -324,44 +278,20 @@ public class MainActivity extends BaseActivity
             }
         }
     }
-    private void showWebView(){
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        float height = (float) ((float) (displayMetrics.heightPixels  - convertDpToPixel(56*2, this)) * 0.9);
-        float width = (float) (displayMetrics.widthPixels * 0.95);
-        String content = "<!-- TradingView Widget BEGIN -->\n" +
-                "<script type=\"text/javascript\" src=\"https://d33t3vvu2t2yu5.cloudfront.net/tv.js\"></script>\n" +
-                "<script type=\"text/javascript\">\n" +
-                "new TradingView.widget({\n" +
-                "  \"width\": "+convertPixelsToDp(width, this)+",\n" +
-                "  \"height\": "+convertPixelsToDp(height/2, this)+",\n" +
-                "  \"symbol\": \"POLONIEX:ETHUSDT\",\n" +
-                "  \"interval\": \"D\",\n" +
-                "  \"timezone\": \"Etc/UTC\",\n" +
-                "  \"theme\": \"White\",\n" +
-                "  \"style\": \"1\",\n" +
-                "  \"locale\": \"en\",\n" +
-                "  \"toolbar_bg\": \"#f1f3f6\",\n" +
-                "  \"enable_publishing\": false,\n" +
-                "  \"hide_top_toolbar\": true,\n" +
-                "  \"save_image\": false,\n" +
-                "  \"hideideas\": true\n" +
-                "});\n" +
-                "</script>\n" +
-                "<!-- TradingView Widget END -->\n";
-        mWebView.loadData(content, "text/html", "UTF-8");
-    }
-    private static float convertDpToPixel(float dp, Context context){
+
+
+
+    private static float convertDpToPixel(float dp, Context context) {
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
-        float px = dp * ((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+        float px = dp * ((float) metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
         return px;
     }
 
-    private static float convertPixelsToDp(float px, Context context){
+    private static float convertPixelsToDp(float px, Context context) {
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
-        float dp = px / ((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+        float dp = px / ((float) metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
         return dp;
     }
 
